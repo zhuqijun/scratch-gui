@@ -162,12 +162,10 @@ const GUIComponent = props => {
                         onRequestClose={onRequestCloseTelemetryModal}
                     />
                 ) : null}
-                {loading ? (
-                    <Loader />
-                ) : null}
-                {isCreating ? (
-                    <Loader messageId="gui.loader.creating" />
-                ) : null}
+               
+			   
+			   
+			   
                 {isRendererSupported ? null : (
                     <WebGlModal isRtl={isRtl} />
                 )}

@@ -39,6 +39,7 @@ import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';
 import GUIComponent from '../components/gui/gui.jsx';
 import {setIsScratchDesktop} from '../lib/isScratchDesktop.js';
 
+
 const messages = defineMessages({
     defaultProjectTitle: {
         id: 'gui.gui.defaultProjectTitle',
@@ -141,7 +142,7 @@ GUI.propTypes = {
 GUI.defaultProps = {
     isScratchDesktop: false,
     onStorageInit: storageInstance => storageInstance.addOfficialScratchWebStores(),
-    onProjectLoaded: () => {},
+    onProjectLoaded: () => {/*alert('onProjectLoaded');*/},
     onUpdateProjectId: () => {}
 };
 

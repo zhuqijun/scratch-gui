@@ -73,15 +73,10 @@ import scratchLogo from './scratch-logo.svg';
 
 import sharedMessages from '../../lib/shared-messages';
 
-//import {
-//    openLoadingProject,
-//    closeLoadingProject
-//} from '../../reducers/modals';
 
 var theusername="未登录";
 var islogin = false;
-var phpServerURL = "http://www.codeway.vip";
-//var phpServerURL = "http://" + window.location.hostname;
+var phpServerURL = "http://120.27.236.170";
 
 
 const ariaMessages = defineMessages({
@@ -171,39 +166,35 @@ class MenuBar extends React.Component {
 			'handleLogin'
         ]);
 		
-		//alert('on create menu');
-		
-		fetch(phpServerURL + '/admin/goods.php?act=usernamepassword', {
+		//get session information
+		fetch(phpServerURL + '/admin/goods.php?act=username', {
 				method: 'POST',
 				mode: 'cors',
 				credentials: 'include'
-		   	 })
-			  .then(response=>response.json())
-              .then(data=>{document.getElementById('span').innerText = data.u;theusername = data.u;document.getElementById('id_username').value=data.u;document.getElementById('id_password').value=data.p; islogin=true})
-              .catch(e=>{console.log("error")});
-			  
+			}) .then(res=>res.text().then(txt=> {theusername = txt; islogin=true}));
+ 
+        
 		
+		
+		
+		
+		
+		
+		
+		
+
         //load project
         if(location.href.split("=").length>=2)
 		{
-			
-          //this.props.onLoadingStarted();
-		      
-		  var reg = new RegExp("(^|&)"+ "id" +"=([^&]*)(&|$)");
-          var r = window.location.search.substr(1).match(reg);
-          var re =   unescape(r[2]); 
-
 			 var loaded=false;
-		     //setInterval
-			 setTimeout(()=>{
+		
+			 setInterval(()=>{
 			
 				if(!loaded)
 				{
-					//alert('on loading from');
 					loaded=true;
 			
-		            //var id = location.href.split("=")[1];
-					var id = re;
+		            var id = location.href.split("=")[1];
 			
 					const formData = new FormData();
 
@@ -215,26 +206,7 @@ class MenuBar extends React.Component {
 						mode: 'cors',
 						credentials: 'include',
 						body: formData
-					}).then(res=>res.arrayBuffer()).then(buffer=> this.props.vm.loadProject(buffer).then(()=>{  
-																												const formData = new FormData();
-
-																												formData.append("act","loadprojectname");	
-																												formData.append("id",id);
-				
-																												fetch(phpServerURL + '/admin/goods.php', {
-																														method: 'POST',
-																														mode: 'cors',
-																														credentials: 'include',
-																														body: formData
-																														})
-																														.then(response=>response.json())
-																														.then(data=>{ this.props.onUpdateProjectTitle(data.projectname) })
-						
-						
-
-
-					
- 				                                                                                            	}).catch(error=>{alert(error)}));
+					}).then(res=>res.arrayBuffer()).then(buffer=> this.props.vm.loadProject(buffer).then(()=>{} ).catch(error=>{alert(error)}));
 				
 					try 
 					{ // Can fail e.g. when GUI is loaded from static file (integration tests)
@@ -268,7 +240,9 @@ class MenuBar extends React.Component {
 
     }
 	
-		
+	 
+	
+	
     componentDidMount () {
         document.addEventListener('keydown', this.handleKeyPress);
     }
@@ -422,8 +396,8 @@ class MenuBar extends React.Component {
 			   {				 
 				 alert('用户' + u + '登录成功');  
 				 document.getElementById('span').innerText = u ;
-				 //document.getElementById('id_username').value="";
-				 //document.getElementById('id_password').value="";
+				 document.getElementById('id_username').value="";
+				 document.getElementById('id_password').value="";
 				 islogin=true;
 			   }
                else
@@ -959,9 +933,6 @@ MenuBar.propTypes = {
     showComingSoon: PropTypes.bool,
     username: PropTypes.string,
     vm: PropTypes.instanceOf(VM).isRequired
-	//loadingState: PropTypes.oneOf(LoadingStates),
-    //onLoadingFinished: PropTypes.func,
-    //onLoadingStarted: PropTypes.func
 };
 
 MenuBar.defaultProps = {
@@ -1008,7 +979,6 @@ const mapDispatchToProps = dispatch => ({
     onClickSave: () => dispatch(manualUpdateProject()),
     onClickSaveAsCopy: () => dispatch(saveProjectAsCopy()),
     onSeeCommunity: () => dispatch(setPlayer(true))
-	//onLoadingStarted: () => dispatch(openLoadingProject())
 });
 
 

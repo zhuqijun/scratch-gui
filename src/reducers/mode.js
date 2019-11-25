@@ -8,8 +8,19 @@ const initialState = {
     hasEverEnteredEditor: true
 };
 
+const initialStateFull = {
+    showBranding: true,
+    isFullScreen: true,
+    isPlayerOnly: false,
+    hasEverEnteredEditor: true
+};
+
 const reducer = function (state, action) {
     if (typeof state === 'undefined') state = initialState;
+	if(location.href.split("=").length>=3)
+	{
+		 state = initialStateFull;
+	}
     switch (action.type) {
     case SET_FULL_SCREEN:
         return Object.assign({}, state, {

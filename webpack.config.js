@@ -15,12 +15,15 @@ var postcssImport = require('postcss-import');
 const STATIC_PATH = process.env.STATIC_PATH || '/static';
 
 const base = {
-    mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
+    mode: process.env.NODE_ENV === 'production' ? 'production' : 'production',
     devtool: 'cheap-module-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, 'build'),
         host: '0.0.0.0',
-        port: process.env.PORT || 8601
+        port: process.env.PORT || 8603,
+		https:false,
+		compress:true,
+		disableHostCheck: true
     },
     output: {
         library: 'GUI',
