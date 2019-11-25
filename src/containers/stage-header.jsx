@@ -19,7 +19,6 @@ class StageHeader extends React.Component {
         ]);
     }
     componentDidMount () {
-		setFullScreen(true);
         document.addEventListener('keydown', this.handleKeyPress);
     }
     componentWillUnmount () {
