@@ -706,34 +706,7 @@ class MenuBar extends React.Component {
                                     )}</SB3Downloader>
 									
                     </div>
-					
-					
-					
-					
-                    <div className={classNames(styles.menuBarItem, styles.communityButtonWrapper)}>
-                        {this.props.enableCommunity ? (
-                            (this.props.isShowingProject || this.props.isUpdating) && (
-                                <ProjectWatcher onDoneUpdating={this.props.onSeeCommunity}>
-                                    {
-                                        waitForUpdate => (
-                                            <CommunityButton
-                                                className={styles.menuBarButton}
-                                                /* eslint-disable react/jsx-no-bind */
-                                                onClick={() => {
-                                                    this.handleClickSeeCommunity(waitForUpdate);
-                                                }}
-                                                /* eslint-enable react/jsx-no-bind */
-                                            />
-                                        )
-                                    }
-                                </ProjectWatcher>
-                            )
-                        ) : (this.props.showComingSoon ? (
-                            <MenuBarItemTooltip id="community-button">
-                                <CommunityButton className={styles.menuBarButton} />
-                            </MenuBarItemTooltip>
-                        ) : [])}
-                    </div>
+
                 </div>
 
                 {/* show the proper UI in the account menu, given whether the user is
@@ -830,12 +803,18 @@ class MenuBar extends React.Component {
 							  
 					            用户名 <input type="text" name="fname" id="id_username"   />
 					            密  码 <input type="password" name="pwd" id="id_password"   />
+								 <MenuItem className={styles.menuBarButton} onClick={this.handleLogin}>
+                                            <FormattedMessage
+                                                defaultMessage="登录"
+                                                description="login to server"
+                                                id="gui.menuBar.saveToServer4"
+                                            />
+                                 </MenuItem>
 								
-								
-								 <input type="button" value="登录" id="btnlogin" onClick={this.handleLogin} />
+							
 								 
 								 {/*
-								 
+								 	 <input type="button" value="登录" id="btnlogin" onClick={this.handleLogin} />
 				                 <a
                                     className={styles.feedbackLink}
                                     rel="noopener noreferrer"
@@ -857,7 +836,7 @@ class MenuBar extends React.Component {
                             </div>	
                             {this.props.showComingSoon ? (
                                 <React.Fragment>
-                                    <MenuBarItemTooltip id="mystuff">
+                                  
                                         <div
                                             className={classNames(
                                                 styles.menuBarItem,
@@ -870,11 +849,8 @@ class MenuBar extends React.Component {
                                                 src={mystuffIcon}
                                             />
                                         </div>
-                                    </MenuBarItemTooltip>
-                                    <MenuBarItemTooltip
-                                        id="account-nav"
-                                        place={this.props.isRtl ? 'right' : 'left'}
-                                    >
+                            
+                               
                                         <div
                                             className={classNames(
                                                 styles.menuBarItem,
@@ -895,7 +871,7 @@ class MenuBar extends React.Component {
                                             />
 											
                                         </div>
-                                    </MenuBarItemTooltip>
+                              
                                 </React.Fragment>
                             ) : []}
                         </React.Fragment>

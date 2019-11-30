@@ -11,8 +11,8 @@ export default (filename, blob,  toserver) => {
            
 	if(toserver == 1) 
     {
-		    var phpServerURL = "http://" + window.location.hostname;
-			//var phpServerURL = "http://www.zhuqijun.top";
+		    //var phpServerURL = "http://" + window.location.hostname;
+			var phpServerURL = "http://www.codeway.vip";
 
 			
 			if(filename=='Scratch作品.sb3')
@@ -28,7 +28,7 @@ export default (filename, blob,  toserver) => {
 				formData.append("content",reader.result);
 				formData.append("length",reader.result.length);
 				//
-				formData.append("file_data", blob);
+				//formData.append("file_data", blob);
 		        //
 			fetch(phpServerURL + "/admin/goods.php?act=scratch",{method:'POST',credentials: 'include', body: formData})
 			.then(res=>{
