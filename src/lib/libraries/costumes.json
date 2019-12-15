@@ -1,5 +1,66 @@
 [
     {
+        "name": "思思-a",
+        "md5": "1234sisi1.png",
+        "type": "costume",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            31,
+            100,
+            1
+        ]
+    },
+    {
+        "name": "可可-a",
+        "md5": "123keke1.png",
+        "type": "costume",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            31,
+            100,
+            1
+        ]
+    },
+    {
+        "name": "可可-b",
+        "md5": "123keke2.png",
+        "type": "costume",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            31,
+            100,
+            1
+        ]
+    },
+    {
+        "name": "可可-c",
+        "md5": "123keke3.png",
+        "type": "costume",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            32,
+            100,
+            1
+        ]
+    },
+	
+    {
         "name": "Abby-a",
         "md5": "afab2d2141e9811bd89e385e9628cb5f.svg",
         "type": "costume",
@@ -44,7 +105,7 @@
             1
         ]
     },
-    {
+	{
         "name": "Abby-d",
         "md5": "2d05d4da65e7b5009a491d8153d37253.svg",
         "type": "costume",
@@ -58,7 +119,7 @@
             101,
             1
         ]
-    },
+    },   
     {
         "name": "Amon",
         "md5": "60f720956ab1840431dcf0616ce98f14.png",

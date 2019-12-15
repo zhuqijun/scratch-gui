@@ -1,5 +1,117 @@
 [
     {
+        "name": "思思",
+        "md5": "1234sisi1.png",
+        "type": "sprite",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            0,
+            4,
+            1
+        ],
+        "json": {
+            "objName": "思思",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "思思-a",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "1234sisi1.png",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 31,
+                    "rotationCenterY": 100
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": -20,
+            "scratchY": -38,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+	
+	{
+        "name": "可可",
+        "md5": "123keke1.png",
+        "type": "sprite",
+        "tags": [
+            "people",
+            "person",
+            "drawing"
+        ],
+        "info": [
+            0,
+            4,
+            1
+        ],
+        "json": {
+            "objName": "可可",
+            "sounds": [
+                {
+                    "soundName": "pop",
+                    "soundID": -1,
+                    "md5": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+                    "sampleCount": 258,
+                    "rate": 11025,
+                    "format": ""
+                }
+            ],
+            "costumes": [
+                {
+                    "costumeName": "可可-a",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "123keke1.png",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 31,
+                    "rotationCenterY": 100
+                },
+                {
+                    "costumeName": "可可-b",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "123keke2.png",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 31,
+                    "rotationCenterY": 100
+                },
+                {
+                    "costumeName": "可可-c",
+                    "baseLayerID": -1,
+                    "baseLayerMD5": "123keke3.png",
+                    "bitmapResolution": 1,
+                    "rotationCenterX": 32,
+                    "rotationCenterY": 100
+                }
+            ],
+            "currentCostumeIndex": 0,
+            "scratchX": -20,
+            "scratchY": -38,
+            "scale": 1,
+            "direction": 90,
+            "rotationStyle": "normal",
+            "isDraggable": false,
+            "visible": true,
+            "spriteInfo": {}
+        }
+    },
+	
+    {
         "name": "Abby",
         "md5": "afab2d2141e9811bd89e385e9628cb5f.svg",
         "type": "sprite",

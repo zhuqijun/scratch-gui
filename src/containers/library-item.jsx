@@ -88,7 +88,10 @@ class LibraryItem extends React.PureComponent {
     render () {
         const iconMd5 = this.curIconMd5();
         const iconURL = iconMd5 ?
-            `https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` :
+            //`https://cdn.assets.scratch.mit.edu/internalapi/asset/${iconMd5}/get/` :
+			//`https://www.wecoding.com.cn/workbench/static/assets/${iconMd5}` :
+			//`http://www.zhuqijun.top/assets/${iconMd5}` :
+			`http://txcdn.zhuqijun.top/assets/${iconMd5}` :
             this.props.iconRawURL;
         return (
             <LibraryItemComponent
