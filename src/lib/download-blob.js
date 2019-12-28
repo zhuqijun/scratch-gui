@@ -34,7 +34,7 @@ export default (filename, blob,  toserver) => {
 			.then(res=>{
 					  if(res.status == 200)
 					  {						  
-				        res.text().then(txt=> {if(txt == "1") alert('作品 ' + filename + ' 已成功保存到云服务器'); else alert('作品保存失败！'); }    );
+				        res.text().then(txt=> {if(txt == "1") alert('作品 ' + filename + ' 已成功保存到云服务器'); else alert('作品保存失败,请关闭Scratch并重新打开作品！'); }    );
 						
 					  }
 					  else if(res.status == 401)
